@@ -110,4 +110,11 @@ class InfoOutput {
 
 		return ($s-$e);
 	}
+
+	public static function getLineItems() {
+		$e = getDatabase()->all("SELECT * FROM expense WHERE 1 ORDER BY id ASC");
+		$s = getDatabase()->all("SELECT * FROM sales WHERE 1 ORDER BY id ASC");
+
+		
+	}
 }

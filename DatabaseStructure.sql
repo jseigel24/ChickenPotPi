@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2013 at 06:11 PM
+-- Generation Time: Apr 21, 2013 at 07:54 PM
 -- Server version: 5.5.30
 -- PHP Version: 5.4.4-14
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `egg` (
   `fertilized` tinyint(1) NOT NULL,
   `number` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `egg`
@@ -63,7 +63,8 @@ INSERT INTO `egg` (`id`, `laydate`, `fertilized`, `number`) VALUES
 (7, '2013-04-21 13:03:54', 0, 0),
 (8, '2013-04-21 13:04:06', 88, 44),
 (9, '2013-04-21 17:55:35', 44, 44),
-(10, '2013-04-21 17:57:18', 0, 543);
+(10, '2013-04-21 17:57:18', 0, 543),
+(11, '2013-04-21 18:15:10', 44, 44);
 
 -- --------------------------------------------------------
 

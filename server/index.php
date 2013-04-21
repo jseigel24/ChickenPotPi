@@ -23,6 +23,7 @@ getRoute()->get('/budget', array('Site', 'Budget'));
 getRoute()->post('/tracker/eggslaid', array('FormSubmit', 'eggslaid'));
 getRoute()->post('/tracker/salesupdate', array('FormSubmit', 'salesupdate'));
 getRoute()->post('/tracker/expenseupdate', array('FormSubmit', 'expenseupdate'));
+getRoute()->post('/tracker/birdupdate', array('FormSubmit', 'birdupdate'));
 
 //Catch all for 404s
 getRoute()->get('.*', array('Errors', '_404'));

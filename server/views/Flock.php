@@ -1,21 +1,24 @@
 <div class="formsec">
 <h3></h3>
-<form action="/tracker/birdupdate" mwthod="POST">
+<form action="/tracker/birdupdate" method="POST">
 
-<h4>New Bird</h4>
+<h3>New Bird</h3>
 <table>
-	<tr>
-		<td>Date Acquired</td>
-		<td><input type="text" name="" /></td>
-	</tr>
-
-
         <tr>
                 <td> Breed </td>
                 <td><input type="text" name="breed" /></td>
         </tr>
 
-        <tr>
+	<tr>	<td>Gender</td>
+		<td><select name="gender">
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+		   </select>
+		</td>
+	</tr> 
+
+
+	<tr>
                 <td>Name</td>
                 <td><input type="text" name="name" /></td>
         </tr>
@@ -37,9 +40,32 @@
 </table>
 </form>
 
-<h4>Current Birds</h4>
-<!--Echo out Bird Info here-->
-
 </div>
 
+<div class="formsec">
 
+<h3>Current Flock</h3>
+
+
+
+	<h4>Birds</h4>
+
+
+
+
+        <h4> Eggs</h4>
+        <div>
+                Total Number of Eggs: <?= InfoOutput::getTotalEggs() ?>
+        </div>
+        <div>
+                Fertilized: <?= InfoOutput::getTotalFertilized() ?><br />
+                Unfertilized:<?= InfoOutput::getTotalUnfertilized()?>
+        </div>
+
+        <div>
+                Total number of chickens: <?=InfoOutput::getTotalBirds()?>
+        </div>
+
+
+
+</div>

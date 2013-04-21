@@ -27,6 +27,7 @@ class Site {
 	}
 
 	public static function Budget() {
+		
 		getTemplate()->display('header.php');
 		getTemplate()->display('Budget.php');
 		getTemplate()->display('footer.php');
