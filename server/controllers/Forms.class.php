@@ -25,12 +25,17 @@ class FormSubmit {
 	}
 
 
-/*	public static function birdupdate() {
-		$=$_POST[''];
-		$=$_POST[''];
-		getDatabase()->one ("INSERT INTO expense(date, ) VALUES('$', '$','$')");
+	public static function birdupdate() {
+		$breed = $_POST['breed'];
+		$gender =$_POST['gender'];
+		$name = $_POST['name'];
+		$age = $_POST['age'];
+		$weight = $_POST['weight'];
+		getDatabase()->execute("INSERT INTO bird(gender, name, age, breed, weight)
+					VALUES('$gender','$name','$age','$breed','$weight')");
+	getRoute()->redirect('/flock');
 
 	}
-*/
+
 }
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2013 at 07:54 PM
+-- Generation Time: Apr 21, 2013 at 08:26 PM
 -- Server version: 5.5.30
 -- PHP Version: 5.4.4-14
 
@@ -32,12 +32,21 @@ CREATE TABLE IF NOT EXISTS `bird` (
   `gender` tinyint(1) DEFAULT NULL,
   `hatchdate` datetime DEFAULT NULL,
   `name` varchar(64) DEFAULT NULL,
+  `age` int(11) NOT NULL,
   `purchasedate` datetime DEFAULT NULL,
   `breed` varchar(64) NOT NULL,
+  `weight` int(11) NOT NULL,
   `notes` varchar(255) NOT NULL,
-  `photo` varchar(255) NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `bird`
+--
+
+INSERT INTO `bird` (`id`, `stage`, `gender`, `hatchdate`, `name`, `age`, `purchasedate`, `breed`, `weight`, `notes`, `photo`) VALUES
+(1, NULL, 0, NULL, 'candy', 1, NULL, 'white', 1, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -81,7 +90,15 @@ CREATE TABLE IF NOT EXISTS `expense` (
   `recurdate` datetime DEFAULT NULL,
   `category` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `expense`
+--
+
+INSERT INTO `expense` (`id`, `description`, `date`, `price`, `recurring`, `recurdate`, `category`) VALUES
+(1, 'expensetest1', NULL, 100, NULL, NULL, 'feed'),
+(2, 'expensetest2', NULL, 600, NULL, NULL, 'bananas');
 
 -- --------------------------------------------------------
 
@@ -107,8 +124,17 @@ CREATE TABLE IF NOT EXISTS `sales` (
   `date` date NOT NULL,
   `quantity` int(11) NOT NULL,
   `price` bigint(20) NOT NULL,
+  `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sales`
+--
+
+INSERT INTO `sales` (`id`, `date`, `quantity`, `price`, `description`) VALUES
+(1, '0000-00-00', 500, 100, 'salestest1'),
+(2, '0000-00-00', 100, 20, 'salestest2');
 
 -- --------------------------------------------------------
 
@@ -121,14 +147,16 @@ CREATE TABLE IF NOT EXISTS `weather` (
   `weather_json` text NOT NULL,
   `timegotten` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `weather`
 --
 
 INSERT INTO `weather` (`id`, `weather_json`, `timegotten`) VALUES
-(1, '\n{\n	"response": {\n		"version": "0.1"\n		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"\n		,"features": {\n		"conditions": 1\n		}\n	}\n		,	"current_observation": {\n		"image": {\n		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",\n		"title":"Weather Underground",\n		"link":"http://www.wunderground.com"\n		},\n		"display_location": {\n		"full":"Tallahassee, FL",\n		"city":"Tallahassee",\n		"state":"FL",\n		"state_name":"Florida",\n		"country":"US",\n		"country_iso3166":"US",\n		"zip":"32301",\n		"latitude":"30.42930031",\n		"longitude":"-84.25710297",\n		"elevation":"59.00000000"\n		},\n		"observation_location": {\n		"full":"Betton Hills, Tallahassee, Florida",\n		"city":"Betton Hills, Tallahassee",\n		"state":"Florida",\n		"country":"US",\n		"country_iso3166":"US",\n		"latitude":"30.465418",\n		"longitude":"-84.260811",\n		"elevation":"226 ft"\n		},\n		"estimated": {\n		},\n		"station_id":"KFLTALLA48",\n		"observation_time":"Last Updated on April 21, 1:52 PM EDT",\n		"observation_time_rfc822":"Sun, 21 Apr 2013 13:52:33 -0400",\n		"observation_epoch":"1366566753",\n		"local_time_rfc822":"Sun, 21 Apr 2013 14:06:23 -0400",\n		"local_epoch":"1366567583",\n		"local_tz_short":"EDT",\n		"local_tz_long":"America/New_York",\n		"local_tz_offset":"-0400",\n		"weather":"Partly Cloudy",\n		"temperature_string":"73.6 F (23.1 C)",\n		"temp_f":73.6,\n		"temp_c":23.1,\n		"relative_humidity":"53%",\n		"wind_string":"From the SE at 4.0 MPH Gusting to 6.0 MPH",\n		"wind_dir":"SE",\n		"wind_degrees":127,\n		"wind_mph":4.0,\n		"wind_gust_mph":"6.0",\n		"wind_kph":6.4,\n		"wind_gust_kph":"9.7",\n		"pressure_mb":"1021",\n		"pressure_in":"30.16",\n		"pressure_trend":"-",\n		"dewpoint_string":"55 F (13 C)",\n		"dewpoint_f":55,\n		"dewpoint_c":13,\n		"heat_index_string":"NA",\n		"heat_index_f":"NA",\n		"heat_index_c":"NA",\n		"windchill_string":"NA",\n		"windchill_f":"NA",\n		"windchill_c":"NA",\n		"feelslike_string":"73.6 F (23.1 C)",\n		"feelslike_f":"73.6",\n		"feelslike_c":"23.1",\n		"visibility_mi":"10.0",\n		"visibility_km":"16.1",\n		"solarradiation":"",\n		"UV":"12",\n		"precip_1hr_string":"0.00 in ( 0 mm)",\n		"precip_1hr_in":"0.00",\n		"precip_1hr_metric":" 0",\n		"precip_today_string":"0.00 in (0 mm)",\n		"precip_today_in":"0.00",\n		"precip_today_metric":"0",\n		"icon":"partlycloudy",\n		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",\n		"forecast_url":"http://www.wunderground.com/US/FL/Tallahassee.html",\n		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KFLTALLA48",\n		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=30.465418,-84.260811"\n	}\n}\n', 1366567583);
+(1, '\n{\n	"response": {\n		"version": "0.1"\n		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"\n		,"features": {\n		"conditions": 1\n		}\n	}\n		,	"current_observation": {\n		"image": {\n		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",\n		"title":"Weather Underground",\n		"link":"http://www.wunderground.com"\n		},\n		"display_location": {\n		"full":"Tallahassee, FL",\n		"city":"Tallahassee",\n		"state":"FL",\n		"state_name":"Florida",\n		"country":"US",\n		"country_iso3166":"US",\n		"zip":"32301",\n		"latitude":"30.42930031",\n		"longitude":"-84.25710297",\n		"elevation":"59.00000000"\n		},\n		"observation_location": {\n		"full":"Betton Hills, Tallahassee, Florida",\n		"city":"Betton Hills, Tallahassee",\n		"state":"Florida",\n		"country":"US",\n		"country_iso3166":"US",\n		"latitude":"30.465418",\n		"longitude":"-84.260811",\n		"elevation":"226 ft"\n		},\n		"estimated": {\n		},\n		"station_id":"KFLTALLA48",\n		"observation_time":"Last Updated on April 21, 1:52 PM EDT",\n		"observation_time_rfc822":"Sun, 21 Apr 2013 13:52:33 -0400",\n		"observation_epoch":"1366566753",\n		"local_time_rfc822":"Sun, 21 Apr 2013 14:06:23 -0400",\n		"local_epoch":"1366567583",\n		"local_tz_short":"EDT",\n		"local_tz_long":"America/New_York",\n		"local_tz_offset":"-0400",\n		"weather":"Partly Cloudy",\n		"temperature_string":"73.6 F (23.1 C)",\n		"temp_f":73.6,\n		"temp_c":23.1,\n		"relative_humidity":"53%",\n		"wind_string":"From the SE at 4.0 MPH Gusting to 6.0 MPH",\n		"wind_dir":"SE",\n		"wind_degrees":127,\n		"wind_mph":4.0,\n		"wind_gust_mph":"6.0",\n		"wind_kph":6.4,\n		"wind_gust_kph":"9.7",\n		"pressure_mb":"1021",\n		"pressure_in":"30.16",\n		"pressure_trend":"-",\n		"dewpoint_string":"55 F (13 C)",\n		"dewpoint_f":55,\n		"dewpoint_c":13,\n		"heat_index_string":"NA",\n		"heat_index_f":"NA",\n		"heat_index_c":"NA",\n		"windchill_string":"NA",\n		"windchill_f":"NA",\n		"windchill_c":"NA",\n		"feelslike_string":"73.6 F (23.1 C)",\n		"feelslike_f":"73.6",\n		"feelslike_c":"23.1",\n		"visibility_mi":"10.0",\n		"visibility_km":"16.1",\n		"solarradiation":"",\n		"UV":"12",\n		"precip_1hr_string":"0.00 in ( 0 mm)",\n		"precip_1hr_in":"0.00",\n		"precip_1hr_metric":" 0",\n		"precip_today_string":"0.00 in (0 mm)",\n		"precip_today_in":"0.00",\n		"precip_today_metric":"0",\n		"icon":"partlycloudy",\n		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",\n		"forecast_url":"http://www.wunderground.com/US/FL/Tallahassee.html",\n		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KFLTALLA48",\n		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=30.465418,-84.260811"\n	}\n}\n', 1366567583),
+(2, '\n{\n	"response": {\n		"version": "0.1"\n		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"\n		,"features": {\n		"conditions": 1\n		}\n	}\n		,	"current_observation": {\n		"image": {\n		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",\n		"title":"Weather Underground",\n		"link":"http://www.wunderground.com"\n		},\n		"display_location": {\n		"full":"Tallahassee, FL",\n		"city":"Tallahassee",\n		"state":"FL",\n		"state_name":"Florida",\n		"country":"US",\n		"country_iso3166":"US",\n		"zip":"32301",\n		"latitude":"30.42930031",\n		"longitude":"-84.25710297",\n		"elevation":"59.00000000"\n		},\n		"observation_location": {\n		"full":"Betton Hills, Tallahassee, Florida",\n		"city":"Betton Hills, Tallahassee",\n		"state":"Florida",\n		"country":"US",\n		"country_iso3166":"US",\n		"latitude":"30.465418",\n		"longitude":"-84.260811",\n		"elevation":"226 ft"\n		},\n		"estimated": {\n		},\n		"station_id":"KFLTALLA48",\n		"observation_time":"Last Updated on April 21, 4:07 PM EDT",\n		"observation_time_rfc822":"Sun, 21 Apr 2013 16:07:50 -0400",\n		"observation_epoch":"1366574870",\n		"local_time_rfc822":"Sun, 21 Apr 2013 16:22:16 -0400",\n		"local_epoch":"1366575736",\n		"local_tz_short":"EDT",\n		"local_tz_long":"America/New_York",\n		"local_tz_offset":"-0400",\n		"weather":"Scattered Clouds",\n		"temperature_string":"76.8 F (24.9 C)",\n		"temp_f":76.8,\n		"temp_c":24.9,\n		"relative_humidity":"48%",\n		"wind_string":"From the SSE at 1.0 MPH Gusting to 6.0 MPH",\n		"wind_dir":"SSE",\n		"wind_degrees":150,\n		"wind_mph":1.0,\n		"wind_gust_mph":"6.0",\n		"wind_kph":1.6,\n		"wind_gust_kph":"9.7",\n		"pressure_mb":"1020",\n		"pressure_in":"30.13",\n		"pressure_trend":"-",\n		"dewpoint_string":"56 F (13 C)",\n		"dewpoint_f":56,\n		"dewpoint_c":13,\n		"heat_index_string":"NA",\n		"heat_index_f":"NA",\n		"heat_index_c":"NA",\n		"windchill_string":"NA",\n		"windchill_f":"NA",\n		"windchill_c":"NA",\n		"feelslike_string":"76.8 F (24.9 C)",\n		"feelslike_f":"76.8",\n		"feelslike_c":"24.9",\n		"visibility_mi":"10.0",\n		"visibility_km":"16.1",\n		"solarradiation":"",\n		"UV":"7",\n		"precip_1hr_string":"0.00 in ( 0 mm)",\n		"precip_1hr_in":"0.00",\n		"precip_1hr_metric":" 0",\n		"precip_today_string":"0.00 in (0 mm)",\n		"precip_today_in":"0.00",\n		"precip_today_metric":"0",\n		"icon":"partlycloudy",\n		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",\n		"forecast_url":"http://www.wunderground.com/US/FL/Tallahassee.html",\n		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KFLTALLA48",\n		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=30.465418,-84.260811"\n	}\n}\n', 1366575736),
+(3, '\n{\n	"response": {\n		"version": "0.1"\n		,"termsofService": "http://www.wunderground.com/weather/api/d/terms.html"\n		,"features": {\n		"conditions": 1\n		}\n	}\n		,	"current_observation": {\n		"image": {\n		"url":"http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png",\n		"title":"Weather Underground",\n		"link":"http://www.wunderground.com"\n		},\n		"display_location": {\n		"full":"Tallahassee, FL",\n		"city":"Tallahassee",\n		"state":"FL",\n		"state_name":"Florida",\n		"country":"US",\n		"country_iso3166":"US",\n		"zip":"32301",\n		"latitude":"30.42930031",\n		"longitude":"-84.25710297",\n		"elevation":"59.00000000"\n		},\n		"observation_location": {\n		"full":"Betton Hills, Tallahassee, Florida",\n		"city":"Betton Hills, Tallahassee",\n		"state":"Florida",\n		"country":"US",\n		"country_iso3166":"US",\n		"latitude":"30.465418",\n		"longitude":"-84.260811",\n		"elevation":"226 ft"\n		},\n		"estimated": {\n		},\n		"station_id":"KFLTALLA48",\n		"observation_time":"Last Updated on April 21, 4:07 PM EDT",\n		"observation_time_rfc822":"Sun, 21 Apr 2013 16:07:50 -0400",\n		"observation_epoch":"1366574870",\n		"local_time_rfc822":"Sun, 21 Apr 2013 16:22:17 -0400",\n		"local_epoch":"1366575737",\n		"local_tz_short":"EDT",\n		"local_tz_long":"America/New_York",\n		"local_tz_offset":"-0400",\n		"weather":"Scattered Clouds",\n		"temperature_string":"76.8 F (24.9 C)",\n		"temp_f":76.8,\n		"temp_c":24.9,\n		"relative_humidity":"48%",\n		"wind_string":"From the SSE at 1.0 MPH Gusting to 6.0 MPH",\n		"wind_dir":"SSE",\n		"wind_degrees":150,\n		"wind_mph":1.0,\n		"wind_gust_mph":"6.0",\n		"wind_kph":1.6,\n		"wind_gust_kph":"9.7",\n		"pressure_mb":"1020",\n		"pressure_in":"30.13",\n		"pressure_trend":"-",\n		"dewpoint_string":"56 F (13 C)",\n		"dewpoint_f":56,\n		"dewpoint_c":13,\n		"heat_index_string":"NA",\n		"heat_index_f":"NA",\n		"heat_index_c":"NA",\n		"windchill_string":"NA",\n		"windchill_f":"NA",\n		"windchill_c":"NA",\n		"feelslike_string":"76.8 F (24.9 C)",\n		"feelslike_f":"76.8",\n		"feelslike_c":"24.9",\n		"visibility_mi":"10.0",\n		"visibility_km":"16.1",\n		"solarradiation":"",\n		"UV":"7",\n		"precip_1hr_string":"0.00 in ( 0 mm)",\n		"precip_1hr_in":"0.00",\n		"precip_1hr_metric":" 0",\n		"precip_today_string":"0.00 in (0 mm)",\n		"precip_today_in":"0.00",\n		"precip_today_metric":"0",\n		"icon":"partlycloudy",\n		"icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",\n		"forecast_url":"http://www.wunderground.com/US/FL/Tallahassee.html",\n		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KFLTALLA48",\n		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=30.465418,-84.260811"\n	}\n}\n', 1366575737);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -26,12 +26,12 @@
 	
         <tr>
                 <td>Age</td>
-                <td><input type="text" id="=age" /></td>
+                <td><input type="text" name="age" /></td>
         </tr>
 
         <tr>
                 <td>Weight</td>
-                <td><input type="text" id="weight" /></td>
+                <td><input type="text" name="weight" /></td>
         </tr>
 
 	<tr><td><input type="submit"/></td></tr>
