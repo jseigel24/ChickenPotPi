@@ -27,4 +27,22 @@ class Site {
 		getTemplate()->display('Weather.php', $params);
 		getTemplate()->display('footer.php');
 	}
+
+	public static function Output() {
+		$params = array();
+		$ex = InfoOutput::getExpenses();
+		$s = InfoOutput::getSales();
+		$f = InfoOutput::getFeed();
+		$e = InfoOutput::getEgg();
+		$b = InfoOutput::getBird();
+
+		$params = array('ex'=>$ex, 
+				's'=>$s,
+				'f'=>$f,
+				'e'=>$e,
+				'b'=>$b);
+		getTemplate()->display('header.php');
+		getTemplate()->display('Output.php', $params);
+		getTemplate()->display('footer.php');
+	}
 }

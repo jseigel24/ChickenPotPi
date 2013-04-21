@@ -6,7 +6,7 @@ Epi::setPath('view', './views');
 Epi::setSetting('exceptions', 'true');
 
 Epi::init('database', 'route', 'session', 'template');
-EpiDatabase::employ('mysql', '[USERNAME]', '[SERVERNAME]', '[DATABASENAME]', '[PASSWORD]');
+EpiDatabase::employ('mysql', 'cpp', 'localhost', 'cpp', 'Yt4TYzYvshxpaJhc');
 
 require_once('controllers/INCLUDEFILE.php');
 require_once('settings.php');
@@ -14,6 +14,7 @@ require_once('settings.php');
 getRoute()->get('/', array('Site', 'MainPage'));
 getRoute()->get('/education', array('Site', 'Education'));
 getRoute()->get('/tracker', array('Site', 'Tracker'));
+getRoute()->get('/output', array('Site', 'Output'));
 getRoute()->get('/weather', array('Site', 'Weather'));
 
 getRoute()->post('/tracker/eggslaid', array('FormSubmit', 'eggslaid'));
