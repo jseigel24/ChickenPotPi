@@ -27,9 +27,9 @@ class Site {
 	}
 
 	public static function Budget() {
-		
+		$line = InfoOutput::getLineItems();		
 		getTemplate()->display('header.php');
-		getTemplate()->display('Budget.php');
+		getTemplate()->display('Budget.php', $line);
 		getTemplate()->display('footer.php');
 	}
 

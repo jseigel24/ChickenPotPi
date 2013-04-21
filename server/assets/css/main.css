@@ -3,11 +3,21 @@
 }
 
 .formsec{
-border: 1px solid #000000;
+border: 1px solid #999999;
 margin:10px;
 padding:5px;
 width:425px;
 float:left;
 border-radius:10px;
 -moz-border-radius: 10px;
+}
+
+.formsec2{
+width:1100px;
+border: 1px solid #999999;
+margin:10px;
+padding:5px;
+border-radius:10px;
+-moz-border-radius: 10px;
+
 }

@@ -8,20 +8,28 @@ class FormSubmit {
 		$unfert = $eggslaid - $ferteggs;
 		$laydate = $eggslaid;
 		getDatabase()->execute("INSERT INTO egg(fertilized, number) VALUES('$eggslaid', '$unfert')");
+
+	getRoute()->redirect('/flock');
 	}
 
 	public static function salesupdate() {
 		$eggssold = $_POST['eggssold'];
-		$saledate = $_POST['saledate'];
 		$eggincome = $_POST['eggincome'];
-		getDatabase()->one ("INSERT INTO sales(date, number, price) VALUES('$saledate', '$eggssold', '$eggincome')");
+		getDatabase()->execute("INSERT INTO sales(date, quantity, price) VALUES('$saledate', '$eggssold', '$eggincome')");
+
+
+
+	getRoute()->redirect('/budget');
 	}
 
 	public static function expenseupdate() {
 		$description = $_POST['description'];
                 $amount = $_POST['expenseamount'];
 		$date = $_POST['expensedate'];
-		getDatabase()->one ("INSERT INTO expense(date, description, amount) VALUES('$date', '$description','$amount')");
+		getDatabase()->execute("INSERT INTO expense(description, price) VALUES('$description','$amount')");
+
+
+	getRoute()->redirect('/budget');
 	}
 
 

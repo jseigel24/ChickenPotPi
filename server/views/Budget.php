@@ -38,7 +38,7 @@
 
 <tr>
 <td>Description</td>
-<td><input type="text" name=""/></td>
+<td><input type="text" name="description"/></td>
 </tr>
 
 <tr>
@@ -58,6 +58,9 @@
 </div>
 </div>
 
+
+
+<div class="clearfloat"></div>
 <div class="row">
 	<div class="row"><h2>Profit/Loss</h2></div>
         <div class="row">Total Expenses: $<?=InfoOutput::getExpenseAmount()?></div>
@@ -65,23 +68,56 @@
         <div class="row">Net Profit: $<?=InfoOutput::getNetProfit() ?></div>
 </div>
 
-<div class="row">
-	<div class="row"><h2>Line Items</h2></div>
-	<div class="formsec">
-	<div class="row">
-		<div class="span1">ID</div>
-		<div class="span5">Description</div>
-		<div class="span2">Price</div>
-		<div class="span2">Date</div>
+<div class="formsec2">
+	
+	
+	<h2>Expenses Line Items</h2>
+<table>	
+<tr>
+		<td>id</td>
+		<td>description</td>
+		<td>price</td>
+		<td>date</td>
+	</tr>
+
+<?php foreach($expenses as $l) {?>
+
+<tr>
+<td><?=$l['id']?></td>
+<td><?=$l['description']?></td>
+<td><?=$l['price']?></td>
+<td><?=$l['date']?></td>
+</tr>
+
+</table>
+<?php
+} ?>
+
+
+
+<hr/>
+<hr/>
+
+
+<div class="formsec2">
+<div class="rowj">
+	<div class="rowj"><h2>Sales Line Items</h2></div>
+	<div class="rowj">
+		<div class="span1j">id</div>
+		<div class="span5j">description</div>
+		<div class="span2j">price</div>
+		<div class="span2j">date</div>
 	</div>
-<?php foreach($line as $l) {
-	?><div class="row" id="line_<?=$l['id']?>>
-		<div class="span1"><?=$l['id']?></div>
-		<div class="span5"><?=$l['description']?></div>
-		<div class="span2">$<?=$l['price']?></div>
-		<div class="span2"><?=$l['date']?></div>
+<?php foreach($sales as $l) {
+	?><div class="rowj" id="line_<?=$l['id']?>">
+		<div class="span1j"><?=$l['id']?></div>
+		<div class="span5j"><?=$l['description']?></div>
+		<div class="span2j">$<?=$l['price']?></div>
+		<div class="span2j"><?=$l['date']?></div>
 	</div><?php
 } ?>
-	</div>
 </div>
+
+</div>
+
 </div>

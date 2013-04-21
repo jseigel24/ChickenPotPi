@@ -27,6 +27,11 @@ class InfoOutput {
 		return $b;
 	}
 
+	public static function getTotalBirds() {
+		$b = self::getBird();
+		return count($b);
+	}
+
 	public static function getTotalEggs() {
 		$e = self::getEgg();
 		$total = 0;
@@ -64,15 +69,6 @@ class InfoOutput {
 		return $total;
 	}
 
-	public static function getTotalBirds() {
-		$b = self::getBird();
-		$total = 0;
-		foreach($b as $a) {
-			$total++;
-		}
-		return $total;
-	}
-
 	public static function getLastFed() {
 		$r = getDatabase()->one("SELECT * FROM feed WHERE 1 ORDER BY lastfed DESC LIMIT 1");
 		return $r['lastfed'];
@@ -91,7 +87,7 @@ class InfoOutput {
 		$e = self::getExpenses();
 		$total = 0;
 		foreach($e as $x) {
-			$total = $x['amount'] + $total;
+			$total = $x['price'] + $total;
 		}
 		return ($total/10);
 	}
@@ -99,7 +95,7 @@ class InfoOutput {
 		$s = self::getSales();
 		$total = 0;
 		foreach($s as $x) {
-			$total = $x['amount'] + $total;
+			$total = $x['price'] + $total;
 		}
 		return ($total/10);
 	}
@@ -115,6 +111,7 @@ class InfoOutput {
 		$e = getDatabase()->all("SELECT * FROM expense WHERE 1 ORDER BY id ASC");
 		$s = getDatabase()->all("SELECT * FROM sales WHERE 1 ORDER BY id ASC");
 
+		return array('expenses'=>$e, 'sales'=>$s);
 		
 	}
 }
