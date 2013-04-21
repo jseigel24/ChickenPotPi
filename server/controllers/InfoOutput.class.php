@@ -49,4 +49,13 @@ class InfoOutput {
 		}
 		return $total;
 	}
+
+	public static function getTotalBirds() {
+		$b = self::getBird();
+		$total = 0;
+		foreach($b as $a) {
+			$total++;
+		}
+		return $total;
+	}
 }

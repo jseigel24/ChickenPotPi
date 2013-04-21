@@ -1,6 +1,9 @@
 
 <div class="row">
 	<h1>Current Weather</h1>
+	<?php if($w->current_conditions['info']) {
+		echo $w->current_conditions['info'];
+	} ?>
 </div>
 <div class="row offset2">
 	<div class="row">

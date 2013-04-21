@@ -21,34 +21,6 @@ getRoute()->post('/tracker/eggslaid', array('FormSubmit', 'eggslaid'));
 getRoute()->post('/tracker/salesupdate', array('FormSubmit', 'salesupdate'));
 getRoute()->post('/tracker/expenseupdate', array('FormSubmit', 'expenseupdate'));
 
-/**
-// API Calls
-getRoute()->get('/api/authorize', array('Api', 'authorize_get'));
-getRoute()->post('/api/authorize', array('Api', 'authorize_post'));
-
-//Budget Stuff
-getRoute()->get('/api/budget', array('ApiBudget', 'all'));
-getRoute()->get('/api/budget/balance', array('ApiBudget', 'balance_get'));
-getRoute()->get('/api/budget/sales', array('ApiBudget', 'sales_get'));
-getRoute()->post('/api/budget/sales', array('ApiBudget', 'sales_post'));
-getRoute()->get('/api/budget/sales/(\d+)', array('ApiBudget', 'sales_getone'));
-getRoute()->put('/api/budget/sales/(\d+)', array('ApiBudget', 'sales_update'));
-getRoute()->delete('/api/budget/sales/(\d+)', array('ApiBudget', 'sales_delete'));
-
-//Egg Stuff
-getRoute()->get('/api/eggs/total', array('ApiEggsBirds', 'totaleggs'));
-getRoute()->get('/api/birds/total', array('ApiEggsBirds', 'totalbirds'));
-getRoute()->get('/api/eggs/fertilized', array('ApiEggsBirds', 'eggsfertilized'));
-getRoute()->get('/api/eggs/unfertilized', array('ApiEggsBirds', 'eggsunfertilized'));
-getRoute()->post('/api/eggs/fertilized', array('ApiEggsBirds', 'update_fertilized'));
-getRoute()->post('/api/eggs/unfertilized', array('ApiEggsBirds', 'update_unfertilized'));
-
-//Feed Data
-getRoute()->get('/api/feed/total', array('ApiFeed', 'total'));
-getRoute()->get('/api/feed/isfed', array('ApiFeed', 'isfed'));
-getRoute()->post('/api/feed/isfed', array('ApiFeed', 'isfed_update'));
-getRoute()->get('/api/feed/last', array('ApiFeed', 'lastfeed'));
-**/
 //Catch all for 404s
 getRoute()->get('.*', array('Errors', '_404'));
 

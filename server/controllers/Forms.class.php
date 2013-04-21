@@ -24,5 +24,10 @@ class FormSubmit {
 		getDatabase()->one ("INSERT INTO expense(date, description, amount) VALUES('$date', '$description','$amount')");
 	}
 
+
+	public static function birdupdate() {
+
+
+}
 }
 
