@@ -1,5 +1,4 @@
 .clearfloat {
-	height: 0;
 	clear: both;
 }
 
@@ -7,6 +6,8 @@
 border: 1px solid #000000;
 margin:10px;
 padding:5px;
-width:50%;
+width:350px;
 float:left;
+border-radius:10px;
+-moz-border-radius: 10px;
 }

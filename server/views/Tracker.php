@@ -1,4 +1,4 @@
-<h2> Flock Management</h2>
+<h2 class="clearfloat"> Flock Management</h2>
 
 
 <div class="formsec">
@@ -38,10 +38,34 @@
 <table>
 	<tr>
 		<td>Date Acquired</td>
-		<td><input type="text" id="datepicker" /></td>
+		<td><input type="text" name="" /></td>
 	</tr>
 
-<tr><td><input type="submit"/></td></tr>
+
+        <tr>
+                <td> Breed </td>
+                <td><input type="text" name="breed" /></td>
+        </tr>
+
+        <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" /></td>
+        </tr>
+
+	
+        <tr>
+                <td>Age</td>
+                <td><input type="text" id="=age" /></td>
+        </tr>
+
+        <tr>
+                <td>Weight</td>
+                <td><input type="text" id="weight" /></td>
+        </tr>
+
+	<tr><td><input type="submit"/></td></tr>
+
+
 </table>
 </form>
 
@@ -51,7 +75,7 @@
 </div>
 
 
-<h2>Budget Management</h2>
+<h2 class="clearfloat">Budget Management</h2>
 
 <div class="formsec">
 

@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <head>
 	<title>ChickenPotPi</title>
@@ -12,12 +12,28 @@
 
 <header>
 	<h1>ChickenPotPi</h1>
-	<div id="navbar" style="row span9">
-		<div class="span2" id="home"><a href="/">Home</a></div>
-		<div class="span2" id="education"><a href="/education">Education</a></div>
-		<div class="span2" id="tracker"><a href="/tracker">Tracker</a></div>
-		<div class="span2" id="output"><a href="/output">Output</a></div>
-		<div class="span2" id="weather"><a href="/weather">Weather</a></div>
+	<div class="navbar">
+		<div class="navbar-inner">
+		<ul class="nav">
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/education">Education</a>
+			</li>
+			<li>
+				<a href="/budget">Budget</a>
+			</li>
+			<li>
+				<a href="/flock">Flock</a>
+			</li>
+			<li>
+				<a href="/weather">Weather</a>
+			</li>
+		</ul>
+		</div>
+	</div>
+	<div class="row">old ones: <a href="/tracker">Tracker</a> | <a href="/output">Output</a>
 	</div>
 	<div class="row">&nbsp;</div>
 </header>

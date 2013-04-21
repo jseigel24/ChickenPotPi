@@ -17,6 +17,9 @@ getRoute()->get('/tracker', array('Site', 'Tracker'));
 getRoute()->get('/output', array('Site', 'Output'));
 getRoute()->get('/weather', array('Site', 'Weather'));
 
+getRoute()->get('/flock', array('Site', 'Flock'));
+getRoute()->get('/budget', array('Site', 'Budget'));
+
 getRoute()->post('/tracker/eggslaid', array('FormSubmit', 'eggslaid'));
 getRoute()->post('/tracker/salesupdate', array('FormSubmit', 'salesupdate'));
 getRoute()->post('/tracker/expenseupdate', array('FormSubmit', 'expenseupdate'));

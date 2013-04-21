@@ -20,6 +20,18 @@ class Site {
 		getTemplate()->display('footer.php');
 	}
 
+	public static function Flock() {
+		getTemplate()->display('header.php');
+		getTemplate()->display('Flock.php');
+		getTemplate()->display('footer.php');
+	}
+
+	public static function Budget() {
+		getTemplate()->display('header.php');
+		getTemplate()->display('Budget.php');
+		getTemplate()->display('footer.php');
+	}
+
 	public static function Weather() {
 		
 		$w = new Weather();
