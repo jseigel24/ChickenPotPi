@@ -50,6 +50,20 @@ class InfoOutput {
 		return $total;
 	}
 
+	public static function getTotalUnfertilized(){
+		$e = self::getEgg();
+		$total = 0;
+		foreach($e as $u) {
+			if($u['fertilized'] == 0) {
+				$total = $u['number'] + $total;
+			}
+			else {
+				continue;
+			}
+		}
+		return $total;
+	}
+
 	public static function getTotalBirds() {
 		$b = self::getBird();
 		$total = 0;
@@ -57,5 +71,43 @@ class InfoOutput {
 			$total++;
 		}
 		return $total;
+	}
+
+	public static function getLastFed() {
+		$r = getDatabase()->one("SELECT * FROM feed WHERE 1 ORDER BY lastfed DESC LIMIT 1");
+		return $r['lastfed'];
+	}
+
+	public static function totalFeed() {
+		$r = getDatabase()->all("SELECT * FROM feed WHERE 1");
+		$total = 0;
+		foreach($r as $f) {
+			$total = $f['amount'] + $total;
+		}
+		return $total;
+	}
+
+	public static function getExpenseAmount() {
+		$e = self::getExpenses();
+		$total = 0;
+		foreach($e as $x) {
+			$total = $x['amount'] + $total;
+		}
+		return ($total/10);
+	}
+	public static function getSalesAmount() {
+		$s = self::getSales();
+		$total = 0;
+		foreach($s as $x) {
+			$total = $x['amount'] + $total;
+		}
+		return ($total/10);
+	}
+
+	public static function getNetProfit() {
+		$s = self::getSalesAmount();
+		$e = self::getExpenseAmount();
+
+		return ($s-$e);
 	}
 }

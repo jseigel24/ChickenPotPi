@@ -25,9 +25,12 @@ class FormSubmit {
 	}
 
 
-	public static function birdupdate() {
+/*	public static function birdupdate() {
+		$=$_POST[''];
+		$=$_POST[''];
+		getDatabase()->one ("INSERT INTO expense(date, ) VALUES('$', '$','$')");
 
-
-}
+	}
+*/
 }
 

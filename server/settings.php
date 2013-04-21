@@ -10,7 +10,7 @@ function getfilepath() {
 
 function is_connected()
 {
-    $connected = @fsockopen("www.usa.gov", [80|443]); //website and port
+    $connected = @fsockopen("http://www.usa.gov", [80|443]); //website and port
     if ($connected){
         $is_conn = true; //action when connected
         fclose($connected);

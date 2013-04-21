@@ -1,5 +1,8 @@
 <h2> Flock Management</h2>
 
+
+<div class="formsec">
+
 <h3> Egg Stock Update</h3>
 
 <form action="/tracker/eggslaid" method="POST">
@@ -24,6 +27,10 @@
 </table>
 </form>
 
+</div>
+
+
+<div class="formsec">
 <h3></h3>
 <form action="/tracker/birdupdate" mwthod="POST">
 
@@ -34,18 +41,19 @@
 		<td><input type="text" id="datepicker" /></td>
 	</tr>
 
+<tr><td><input type="submit"/></td></tr>
+</table>
+</form>
 
 <h4>Current Birds</h4>
 <!--Echo out Bird Info here-->
 
-</table>
-
-
-<hr/>
-
+</div>
 
 
 <h2>Budget Management</h2>
+
+<div class="formsec">
 
 <h3>Sales Update</h3>
 <form action="/tracker/salesupdate" method="POST">
@@ -69,6 +77,9 @@
 </table>
 </form>
 
+</div>
+
+<div class="formsec">
 
 <h3>Expense Update</h3>
 
@@ -91,6 +102,8 @@
 <td><input type="text" name="expensedate"/></td>
 </tr>
 
+<tr><td><input type="submit"/></td></tr>
 </table>
 </form>
 
+</div>

@@ -2,3 +2,11 @@
 	height: 0;
 	clear: both;
 }
+
+.formsec{
+border: 1px solid #000000;
+margin:10px;
+padding:5px;
+width:50%;
+float:left;
+}

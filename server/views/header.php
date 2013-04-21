@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<!-- space apps challenge! -->
+
 <html>
 <head>
-	<title>Chicken Pot Pi</title>
+	<title>ChickenPotPi</title>
 	<meta charset="utf-8" />
 
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
@@ -12,7 +11,7 @@
 <div class="container">
 
 <header>
-	<h1>Chicken Pot Pi</h1>
+	<h1>ChickenPotPi</h1>
 	<div id="navbar" style="row span9">
 		<div class="span2" id="home"><a href="/">Home</a></div>
 		<div class="span2" id="education"><a href="/education">Education</a></div>

@@ -24,7 +24,7 @@ class Site {
 		
 		$w = new Weather();
 		
-		if(!is_connected()) {
+	/*	if(!is_connected()) {
 			$w->current_conditions['info'] = 'You are not connected to the internet, and I cannot access weather data!';
 			$w->current_conditions['temp_f'] = 'N/A';
 			$w->current_conditions['feelslike'] = 'N/A';
@@ -33,7 +33,7 @@ class Site {
 			$w->current_conditions['wind_gust'] = 'N/A';
 			$w->current_conditions['forecast'] = 'N/A';
 		}
-
+*/
 		$params = array('w'=>$w);
 		getTemplate()->display('header.php');
 		getTemplate()->display('Weather.php', $params);

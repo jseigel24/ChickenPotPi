@@ -24,7 +24,10 @@ class Weather {
 	private function getConditions($city, $state) {
 		$r = getDatabase()->one('SELECT * FROM weather WHERE 1 ORDER BY timegotten DESC');
 		if($r['timegotten'] < ( time() - 600)) {
-			$json = file_get_contents('http://api.wunderground.com/api/'.$this->token.'/conditions/q/'.$state.'/'.$city.'.json');
+			//later...
+			//$json = file_get_contents('http://api.wunderground.com/api/'.$this->token.'/conditions/q/'.$state.'/'.$city.'.json');
+			$json = file_get_contents('http://api.wunderground.com/api/'.$this->token.'/conditions/q/FL/Tallahassee.json');
+
 			getDatabase()->execute('INSERT INTO weather(weather_json, timegotten) VALUES(:wj, :t)', array(':wj'=>$json, ':t'=>time()));	
 			$this->saveConditions($json);
 		}
