@@ -21,3 +21,9 @@ border-radius:10px;
 -moz-border-radius: 10px;
 
 }
+
+
+.budgettable{
+border: 1px solid #999999;
+padding:1px;
+}

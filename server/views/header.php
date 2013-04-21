@@ -33,7 +33,5 @@
 		</ul>
 		</div>
 	</div>
-	<div class="row">old ones: <a href="/tracker">Tracker</a> | <a href="/output">Output</a>
-	</div>
 	<div class="row">&nbsp;</div>
 </header>
